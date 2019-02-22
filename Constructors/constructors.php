@@ -1,5 +1,5 @@
 <?php
-
+//Show usage of construct and destruct
 class bankAccount {
 	private $accountNumber;
 	private $totalBalance;
@@ -8,6 +8,10 @@ class bankAccount {
 		$this-> accountNumber=$accNo;
 		$this-> totalBalance=$balance;
 		echo "This is a new account";
+	}
+	
+	public function __destruct(){
+		mysqli_close($conn);
 	}
 	
 }
